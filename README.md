@@ -1,5 +1,13 @@
 # SUEP-health-report
 
+An automation script for SUEP daily health report.
+
+## Note
+
+The program automatically uses the last filled information when filling out the report.
+
+Therefore, you should **manually submit a report once** before using this script.
+
 ## Usage
 
 ### Local environment
@@ -46,4 +54,5 @@ Please follow the [GitHub Terms of Service](https://docs.github.com/en/site-poli
 AGPLv3
 
 This program is provided as is, without warranty or liability, please see the LICENSE file for more details.
+
 By using this program, you agree to the terms of the license.
