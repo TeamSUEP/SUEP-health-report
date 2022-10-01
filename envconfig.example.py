@@ -8,3 +8,4 @@ confirm_time = 5
 headless = False
 fullscreen = True
 quit_on_error = False
+private = False

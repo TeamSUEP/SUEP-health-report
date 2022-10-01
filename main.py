@@ -5,7 +5,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from envconfig import username, password, wait_time, confirm_time, headless, fullscreen, quit_on_error
+from envconfig import username, password, wait_time, confirm_time, headless, fullscreen, quit_on_error, private
 
 
 def login(driver, username=username, password=password):
@@ -37,14 +37,18 @@ def login(driver, username=username, password=password):
             print(f"[ERROR] {elements['msg'].text}")
             return False
         except TimeoutException:
-            print(f"[INFO] Successfully logged in as {username}.")
+            if private:
+                print(f"[INFO] Successfully logged in.")
+            else:
+                print(f"[INFO] Successfully logged in as {username}.")
             return True
     elif current_url.startswith('https://ehall.shiep.edu.cn'):
         print(f"[INFO] Already logged in.")
         return True
     else:
         print(f"[ERROR] Unknown error.")
-        print(f"[INFO] Current URL: {current_url}")
+        if not private:
+            print(f"[INFO] Current URL: {current_url}")
         return False
 
 

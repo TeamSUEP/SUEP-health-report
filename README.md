@@ -39,6 +39,7 @@ Please follow the [GitHub Terms of Service](https://docs.github.com/en/site-poli
 | headless      | Whether to run the browser in headless mode                 |
 | fullscreen    | Whether to run the browser in fullscreen mode               |
 | quit_on_error | Whether to quit the program when an error occurs            |
+| private       | Reduce the amount of information output                     |
 
 ## License
 
