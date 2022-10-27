@@ -55,7 +55,8 @@ def login(driver, username=username, password=password):
 def submit(driver):
     url = r'https://ehall.shiep.edu.cn/default/work/shiep/mrjktb/mryb.jsp?type=tb'
     xpaths = {
-        'confirm_checkbox': '//*[@id="checkbox_cn34"]/div/ins',
+        'daily_track': '//*[@id="radio_dtsftjzgfxd15"]/div',
+        'confirm_checkbox': '//*[@id="checkbox_cn38"]/div/ins',
         'submit_button': '//*[@id="post"]',
         'msg': '//*[@id="layui-layer1"]/div[2]',
     }
@@ -68,6 +69,7 @@ def submit(driver):
             elements[element] = WebDriverWait(driver, wait_time).until(
                 EC.presence_of_element_located((By.XPATH, xpath)))
 
+    elements['daily_track'].click()
     elements['confirm_checkbox'].click()
     print(f"[INFO] Please confirm your information in {confirm_time} seconds.")
     sleep(confirm_time)
