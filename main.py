@@ -13,7 +13,7 @@ def login(driver, username=username, password=password):
     xpaths = {
         'username': '//*[@id="username"]',
         'password': '//*[@id="password"]',
-        'login_button': '//*[@id="casLoginForm"]/p[4]/button',
+        'login_button': '//*[@id="casLoginForm"]/p/button[@type="submit"]',
         'msg': '//*[@id="msg"]',
     }
 
